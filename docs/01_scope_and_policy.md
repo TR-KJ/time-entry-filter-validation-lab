@@ -216,3 +216,31 @@ Max DD
 4. Event Filter ON / OFF 比較条件作成
 5. ATR比較条件作成
 ```
+
+## 検証方針の補足
+
+現行EAのフォワードテストは、EAが仕様どおりに動作するかを確認することを目的とする。
+
+フィルターの採用判断は、フォワード成績ではなく、Python / Google Colab による過去データ検証を主軸に行う。
+
+フォワードテストでは以下を確認する。
+
+```text
+Entry時刻
+Direction
+Lot
+SL / TP
+Time Exit
+Event Reject
+ATR Reject
+想定外Entry / 想定外停止
+```
+
+Python検証では以下を比較する。
+
+Event Filter ON / OFF
+Event別除外効果
+ATR Filter OFF
+ATR P60 / P65 / P70 / P75
+ATR Lookback 250 / 500 / 750
+Strategy別・Pair別の影響
